@@ -2,7 +2,6 @@
 
 module tb_mulaw_custom();
 
-    // Fix: Declare the register directly as signed
     reg signed [15:0] sample_in;
 
     // Wires capture the output signals from your module
@@ -20,7 +19,6 @@ module tb_mulaw_custom();
         $display("Time | Input Sample | Codeword (Hex) | Codeword (Binary)");
         $display("---------------------------------------------------------");
         
-        // Fix: Removed $signed() since the variable is now natively signed
         $monitor("%4t | %12d |            %h |         %b", 
                  $time, sample_in, codeword_out, codeword_out);
 
